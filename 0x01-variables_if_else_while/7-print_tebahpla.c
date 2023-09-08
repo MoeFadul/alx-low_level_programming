@@ -4,7 +4,6 @@
  * main - display alphabet reverse and lowercase
  * Return: return 0 and exit program
  */
-
 int main(void)
 {
 	char l;
