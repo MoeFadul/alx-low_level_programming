@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - display alphabet lowercase reverse
+ * main - display alphabet reverse and lowercase
  *
- * Return: return 0 and exit program
+ * Return: return 0 and exit the program
  */
 
 int main(void)
