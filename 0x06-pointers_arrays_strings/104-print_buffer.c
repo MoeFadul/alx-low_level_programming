@@ -2,50 +2,29 @@
 #include <stdio.h>
 
 /**
- * print_buffer - prints buffer
- * @b: buffer
- * @size: size
- * Return: void
+ * print_buffer - Prints a buffer
+ * @b: buffer to print
+ * @size: size of buffer
+ * Return: nothing.
  */
 
 void print_buffer(char *b, int size)
 {
-	int o, j, i;
+	int i;
 
-	o = 0;
-
-	if (size <= 0)
+	for (i = 0; i <= (size - 1) / 10 && size; i++)
 	{
-		printf("\n");
-		return;
-	}
-	while (o < size)
-	{
-		j = size - o < 10 ? size - o : 10;
-		printf("%08x: ", o);
-		for (i = 0; i < 10; i++)
+		printf("%08x: ", i * 10);
+		if (i < size / 10)
 		{
-			if (i < j)
-				printf("%02x", *(b + o + i));
-			else
-				printf("  ");
-			if (i % 2)
-			{
-				printf(" ");
-			}
+			print_line(b, 9, i);
 		}
-		for (i = 0; i < j; i++)
+		else
 		{
-			int c = *(b + o + i);
-
-			if (c < 32 || c > 132)
-			{
-				c = '.';
-			}
-			printf("%c", c);
+			print_line(b, size % 10 - 1, i);
 		}
-		printf("\n");
-		o += 10;
+		putchar('\n');
 	}
-}
+	if (size == 0)
+		putchar('\n');
 }
