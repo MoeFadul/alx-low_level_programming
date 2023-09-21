@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * *_strncpy - Function that copies a string
+ * *_strncpy - Function that copies a string.
  * @dest: string
  * @src: string
  * @n: number of chars to copy over
